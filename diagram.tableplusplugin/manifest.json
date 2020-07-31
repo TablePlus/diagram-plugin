@@ -1,0 +1,37 @@
+{
+    "name": "Diagram Generator",
+    "identifier": "com.tableplus.TablePlus.diagram",
+    "version": "1.0",
+    "detail": "This plugin helps you generate database diagram",
+    "author": "TablePlus",
+    "site": "https://github.com/TablePlus/diagram-plugin",
+    "authorEmail": "nick@tableplus.com",
+        "scripts": [
+        {
+            "location": "item",
+            "type": "separator"
+        },
+        {
+            "name": "Generate diagram",
+            "location": "item",
+            "type": "submenu",
+            "children": [
+                {
+                    "type": "action",
+                    "script": "diagram.js",
+                    "handler": "newDiagram",
+                    "name": "Empty Diagram"
+                },
+                {
+                    "type": "separator"
+                },
+                {
+                    "type": "action",
+                    "script": "diagram.js",
+                    "handler": "generateDiagram",
+                    "name": "Generate Diagram"
+                }
+            ]
+        }
+    ]
+}

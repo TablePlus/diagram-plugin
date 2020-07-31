@@ -1,0 +1,95 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://diagramplus.com/diagram-schema.json",
+    "title": "TablePlus Diagram",
+    "description": "JSON schema for Diagram by TablePlus (https://diagramplus.com/)",
+    "type": "object",
+    "definitions": {
+        "column": {
+            "type": "object",
+            "properties": {
+                "id": { "type": "string" },
+                "type": { "enum": ["string", "boolean"] }
+            },
+            "additionalProperties": false,
+            "required": ["id", "type"]
+        },
+        "row": {
+            "type": "object",
+            "properties": {
+                "id": { "type": "string" },
+                "icon": { "enum": ["key1", "key2"] },
+                "fields": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [{ "type": "string" }, { "type": "boolean" }]
+                    }
+                }
+            },
+            "additionalProperties": false,
+            "required": ["id", "fields"]
+        },
+        "ref-side": {
+            "type": "object",
+            "properties": {
+                "table": { "type": "string" },
+                "rows": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                }
+            },
+            "additionalProperties": false,
+            "required": ["table", "rows"]
+        },
+        "ref": {
+            "type": "object",
+            "properties": {
+                "from": { "$ref": "#/definitions/ref-side" },
+                "to": { "$ref": "#/definitions/ref-side" }
+            },
+            "additionalProperties": false,
+            "required": ["from", "to"]
+        },
+        "table": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "rows": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/row"
+                    }
+                }
+            },
+            "additionalProperties": false,
+            "required": ["id", "rows"]
+        }
+    },
+    "properties": {
+        "columns": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/column"
+            }
+        },
+        "tables": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/table"
+            }
+        },
+        "refs": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/ref"
+            }
+        },
+        "$schema": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": ["columns", "tables", "refs"]
+}
