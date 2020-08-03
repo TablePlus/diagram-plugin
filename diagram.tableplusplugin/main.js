@@ -33,7 +33,7 @@ var generateDiagram = function(context) {
     var driver = context.driver();
 	switch (driver) {
 	case "MySQL":
-		getItemMySQLJson(context, webView, function (data) {
+		getItemMySQLJson(context, [], webView, function (data) {
 			webView.evaluate("window.Diagram.setProgressIndicator(false, 'Loading...')");
 			webView.evaluate("window.Diagram.importDiagram('" + JSON.stringify(data) + "')", function (result) {
 				if (result["error"] != null) {
@@ -43,7 +43,7 @@ var generateDiagram = function(context) {
 		});
 		break;
 	case "PostgreSQL":
-		getItemPostgreSQLJson(context, webView, function (data) {
+		getItemPostgreSQLJson(context, [], webView, function (data) {
 			webView.evaluate("window.Diagram.setProgressIndicator(false, 'Loading...')");
 			webView.evaluate("window.Diagram.importDiagram('" + JSON.stringify(data) + "')", function (result) {
 				if (result["error"] != null) {
@@ -53,7 +53,7 @@ var generateDiagram = function(context) {
 		});
 	  	break;
 	case "MicrosoftSQLServer":
-		getItemSQLServerJson(context, webView, function (data) {
+		getItemSQLServerJson(context, [], webView, function (data) {
 			webView.evaluate("window.Diagram.setProgressIndicator(false, 'Loading...')");
 			webView.evaluate("window.Diagram.importDiagram('" + JSON.stringify(data) + "')", function (result) {
 				if (result["error"] != null) {
@@ -90,16 +90,52 @@ var generateDiagramSelectedItems = function(context) {
 
 	// Disable menu context
 	webView.evaluate("document.body.setAttribute('oncontextmenu', 'event.preventDefault();');");
-  
-	var items = context.selectedItems();
-	getItemJson(context, items, webView, function (data) {
-		webView.evaluate("window.Diagram.setProgressIndicator(false, 'Loading...')");
-		webView.evaluate("window.Diagram.importDiagram('" + JSON.stringify(data) + "')", function (result) {
-			if (result["error"] != null) {
-				context.alert("Hey", result["error"]);
-			}
+
+    var driver = context.driver();
+    var items = context.selectedItems();
+
+	switch (driver) {
+	case "MySQL":
+		getItemMySQLJson(context, items, webView, function (data) {
+			webView.evaluate("window.Diagram.setProgressIndicator(false, 'Loading...')");
+			webView.evaluate("window.Diagram.importDiagram('" + JSON.stringify(data) + "')", function (result) {
+				if (result["error"] != null) {
+					context.alert("Hey", result["error"]);
+				}
+			});
 		});
-	});
+		break;
+	case "PostgreSQL":
+		getItemPostgreSQLJson(context, items, webView, function (data) {
+			webView.evaluate("window.Diagram.setProgressIndicator(false, 'Loading...')");
+			webView.evaluate("window.Diagram.importDiagram('" + JSON.stringify(data) + "')", function (result) {
+				if (result["error"] != null) {
+					context.alert("Hey", result["error"]);
+				}
+			});
+		});
+	  	break;
+	case "MicrosoftSQLServer":
+		getItemSQLServerJson(context, items, webView, function (data) {
+			webView.evaluate("window.Diagram.setProgressIndicator(false, 'Loading...')");
+			webView.evaluate("window.Diagram.importDiagram('" + JSON.stringify(data) + "')", function (result) {
+				if (result["error"] != null) {
+					context.alert("Hey", result["error"]);
+				}
+			});
+		});
+	  	break;
+	default:
+		getItemJson(context, items, webView, function (data) {
+			webView.evaluate("window.Diagram.setProgressIndicator(false, 'Loading...')");
+			webView.evaluate("window.Diagram.importDiagram('" + JSON.stringify(data) + "')", function (result) {
+				if (result["error"] != null) {
+					context.alert("Hey", result["error"]);
+				}
+			});
+		});
+		break;
+	}
 };
 
 global.newDiagram = newDiagram;
