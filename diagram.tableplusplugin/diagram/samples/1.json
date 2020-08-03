@@ -1,0 +1,99 @@
+{
+    "columns": [
+        { "id": "0", "name": "name", "type": "string" },
+        { "id": "1", "name": "type", "type": "string" },
+        { "id": "2", "name": "nullable", "type": "boolean" }
+    ],
+    "items": [
+        {
+            "id": "employees",
+            "name": "employees",
+            "rows": [
+                {
+                    "id": "emp_no",
+                    "name": "emp_no",
+                    "type": "int(11)",
+                    "nullable": "false"
+                },
+                {
+                    "id": "birth_date",
+                    "name": "birth_date",
+                    "type": "date",
+                    "nullable": "true"
+                },
+                {
+                    "id": "first_name",
+                    "name": "first_name",
+                    "type": "varchar(14)",
+                    "nullable": "true"
+                },
+                {
+                    "id": "last_name",
+                    "name": "last_name",
+                    "type": "varchar(16)",
+                    "nullable": "true"
+                }
+            ]
+        },
+        {
+            "id": "departments",
+            "name": "departments",
+            "rows": [
+                {
+                    "id": "dept_no",
+                    "name": "dept_no",
+                    "type": "char(4)",
+                    "nullable": "false"
+                },
+                {
+                    "id": "dept_name",
+                    "name": "dept_name",
+                    "type": "varchar(40)",
+                    "nullable": "false"
+                }
+            ]
+        },
+        {
+            "id": "dept_emp",
+            "name": "dept_emp",
+            "rows": [
+                {
+                    "id": "emp_no",
+                    "name": "emp_no",
+                    "type": "int(11)",
+                    "nullable": "false"
+                },
+                {
+                    "id": "dept_no",
+                    "name": "dept_no",
+                    "type": "char(4)",
+                    "nullable": "false"
+                },
+                {
+                    "id": "from_date",
+                    "name": "from_date",
+                    "type": "date",
+                    "nullable": "true"
+                },
+                {
+                    "id": "to_date",
+                    "name": "to_date",
+                    "type": "date",
+                    "nullable": "true"
+                }
+            ]
+        }
+    ],
+    "refs": [
+        {
+            "from": { "name": "dept_emp", "rows": ["dept_no"] },
+            "to": { "name": "departments", "rows": ["dept_no"] }
+        },
+        {
+            "from": { "name": "dept_emp", "rows": ["emp_no"] },
+            "to": { "name": "employees", "rows": ["emp_no"] }
+        }
+    ],
+    "schema": "main",
+    "$schema": "https://diagramplus.com/diagram-schema.json"
+}

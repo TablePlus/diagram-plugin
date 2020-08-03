@@ -170,10 +170,9 @@ var getItemSQLServerJson = function(context, webView, cb) {
 }
 
 // Fallback default
-var getItemJson = function(context, webView, cb) {
+var getItemJson = function(context, items, webView, cb) {
 	var schema = context.currentSchema();
 	var jsonData = {"columns":[{"id":"0","name":"name","type":"string"},{"id":"1","name":"type","type":"string"},{"id":"2","name":"nullable","type":"boolean"}],"schema":schema,"items":[],"refs":[]};
-	var items = context.items();
 	var count = 0;
 	var total = items.length;
 	async.map(items, function(item, callback) {

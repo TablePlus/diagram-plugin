@@ -1,0 +1,2608 @@
+{
+    "columns": [
+        {
+            "id": "0",
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "id": "1",
+            "name": "type",
+            "type": "string"
+        },
+        {
+            "id": "2",
+            "name": "nullable",
+            "type": "boolean"
+        }
+    ],
+    "items": [
+        {
+            "id": "asdasasfa",
+            "name": "asdasasfa",
+            "rows": [
+                {
+                    "id": "id",
+                    "name": "id",
+                    "type": "longlong",
+                    "nullable": "false"
+                },
+                {
+                    "id": "asf",
+                    "name": "asf",
+                    "type": "blob",
+                    "nullable": "false"
+                }
+            ]
+        },
+        {
+            "id": "autouptable",
+            "name": "autouptable",
+            "rows": [
+                {
+                    "id": "id",
+                    "name": "id",
+                    "type": "longlong",
+                    "nullable": "false"
+                },
+                {
+                    "id": "content",
+                    "name": "content",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "id2",
+                    "name": "id2",
+                    "type": "longlong",
+                    "nullable": "false"
+                }
+            ]
+        },
+        {
+            "id": "autouptable2",
+            "name": "autouptable2",
+            "rows": [
+                {
+                    "id": "id",
+                    "name": "id",
+                    "type": "longlong",
+                    "nullable": "false"
+                },
+                {
+                    "id": "content",
+                    "name": "content",
+                    "type": "blob",
+                    "nullable": "false"
+                }
+            ]
+        },
+        {
+            "id": "avatars",
+            "name": "avatars",
+            "rows": [
+                {
+                    "id": "rarity_id",
+                    "name": "rarity_id",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "avatar_description",
+                    "name": "avatar_description",
+                    "type": "var_string",
+                    "nullable": "false"
+                },
+                {
+                    "id": "level_id",
+                    "name": "level_id",
+                    "type": "short",
+                    "nullable": "false"
+                },
+                {
+                    "id": "store_bundle_id",
+                    "name": "store_bundle_id",
+                    "type": "short",
+                    "nullable": "false"
+                },
+                {
+                    "id": "in_packs",
+                    "name": "in_packs",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "is_mystery",
+                    "name": "is_mystery",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "avatar_id",
+                    "name": "avatar_id",
+                    "type": "short",
+                    "nullable": "false"
+                },
+                {
+                    "id": "is_visible",
+                    "name": "is_visible",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "avatar_type_id",
+                    "name": "avatar_type_id",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "is_enabled",
+                    "name": "is_enabled",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "game_version",
+                    "name": "game_version",
+                    "type": "short",
+                    "nullable": "false"
+                },
+                {
+                    "id": "avatar_name",
+                    "name": "avatar_name",
+                    "type": "var_string",
+                    "nullable": "false"
+                }
+            ]
+        },
+        {
+            "id": "avatars_types",
+            "name": "avatars_types",
+            "rows": [
+                {
+                    "id": "avatar_type_id",
+                    "name": "avatar_type_id",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "avatar_type",
+                    "name": "avatar_type",
+                    "type": "var_string",
+                    "nullable": "false"
+                },
+                {
+                    "id": "rarity_id",
+                    "name": "rarity_id",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "level_id",
+                    "name": "level_id",
+                    "type": "short",
+                    "nullable": "false"
+                },
+                {
+                    "id": "blueprints_needed",
+                    "name": "blueprints_needed",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "store_bundle_id",
+                    "name": "store_bundle_id",
+                    "type": "short",
+                    "nullable": "false"
+                },
+                {
+                    "id": "in_packs",
+                    "name": "in_packs",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "is_visible",
+                    "name": "is_visible",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "is_enabled",
+                    "name": "is_enabled",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "game_version",
+                    "name": "game_version",
+                    "type": "short",
+                    "nullable": "false"
+                }
+            ]
+        },
+        {
+            "id": "cars",
+            "name": "cars",
+            "rows": [
+                {
+                    "id": "ROW_ID",
+                    "name": "ROW_ID",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "G",
+                    "name": "G",
+                    "type": "geometry",
+                    "nullable": "false"
+                },
+                {
+                    "id": "nicebit",
+                    "name": "nicebit",
+                    "type": "bit",
+                    "nullable": "false"
+                }
+            ]
+        },
+        {
+            "id": "comments",
+            "name": "comments",
+            "rows": [
+                {
+                    "id": "id",
+                    "name": "id",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "comment",
+                    "name": "comment",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "from_user_id",
+                    "name": "from_user_id",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "to_user_id",
+                    "name": "to_user_id",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "created_at",
+                    "name": "created_at",
+                    "type": "timestamp",
+                    "nullable": "false"
+                },
+                {
+                    "id": "updated_at",
+                    "name": "updated_at",
+                    "type": "timestamp",
+                    "nullable": "false"
+                },
+                {
+                    "id": "item_id",
+                    "name": "item_id",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "disable",
+                    "name": "disable",
+                    "type": "tiny",
+                    "nullable": "false"
+                }
+            ]
+        },
+        {
+            "id": "contract_2018",
+            "name": "contract_2018",
+            "rows": [
+                {
+                    "id": "id",
+                    "name": "id",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "version",
+                    "name": "version",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "data",
+                    "name": "data",
+                    "type": "json",
+                    "nullable": "false"
+                },
+                {
+                    "id": "contract_date",
+                    "name": "contract_date",
+                    "type": "date",
+                    "nullable": "false"
+                },
+                {
+                    "id": "commodity",
+                    "name": "commodity",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "is_confirmed",
+                    "name": "is_confirmed",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "approval_required",
+                    "name": "approval_required",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "confirmation_nr",
+                    "name": "confirmation_nr",
+                    "type": "var_string",
+                    "nullable": "false"
+                }
+            ]
+        },
+        {
+            "id": "developers",
+            "name": "developers",
+            "rows": [
+                {
+                    "id": "id",
+                    "name": "id",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "name",
+                    "name": "name",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "comment_id",
+                    "name": "comment_id",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "note",
+                    "name": "note",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "This is a long column nameThis is a long column nameThis is a l",
+                    "name": "This is a long column nameThis is a long column nameThis is a l",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "Column number 6",
+                    "name": "Column number 6",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "tb2index",
+                    "name": "tb2index",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "bool_column",
+                    "name": "bool_column",
+                    "type": "blob",
+                    "nullable": "false"
+                }
+            ]
+        },
+        {
+            "id": "game_modes",
+            "name": "game_modes",
+            "rows": [
+                {
+                    "id": "game_mode_id",
+                    "name": "game_mode_id",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "mode_name",
+                    "name": "mode_name",
+                    "type": "var_string",
+                    "nullable": "false"
+                },
+                {
+                    "id": "mode_key",
+                    "name": "mode_key",
+                    "type": "var_string",
+                    "nullable": "false"
+                },
+                {
+                    "id": "mode_asset",
+                    "name": "mode_asset",
+                    "type": "var_string",
+                    "nullable": "false"
+                },
+                {
+                    "id": "mode_description",
+                    "name": "mode_description",
+                    "type": "var_string",
+                    "nullable": "false"
+                },
+                {
+                    "id": "max_rounds",
+                    "name": "max_rounds",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "time_limit",
+                    "name": "time_limit",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "goal_limit",
+                    "name": "goal_limit",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "goal_type",
+                    "name": "goal_type",
+                    "type": "var_string",
+                    "nullable": "false"
+                },
+                {
+                    "id": "map_list",
+                    "name": "map_list",
+                    "type": "var_string",
+                    "nullable": "false"
+                },
+                {
+                    "id": "is_teambased",
+                    "name": "is_teambased",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "is_enabled",
+                    "name": "is_enabled",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "game_version",
+                    "name": "game_version",
+                    "type": "short",
+                    "nullable": "false"
+                },
+                {
+                    "id": "is_visible",
+                    "name": "is_visible",
+                    "type": "tiny",
+                    "nullable": "false"
+                }
+            ]
+        },
+        {
+            "id": "geotest",
+            "name": "geotest",
+            "rows": [
+                {
+                    "id": "code",
+                    "name": "code",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "descrip",
+                    "name": "descrip",
+                    "type": "var_string",
+                    "nullable": "false"
+                },
+                {
+                    "id": "g",
+                    "name": "g",
+                    "type": "geometry",
+                    "nullable": "false"
+                }
+            ]
+        },
+        {
+            "id": "mealplan",
+            "name": "mealplan",
+            "rows": [
+                {
+                    "id": "id",
+                    "name": "id",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "user_id",
+                    "name": "user_id",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "plan",
+                    "name": "plan",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "accessed_at",
+                    "name": "accessed_at",
+                    "type": "datetime",
+                    "nullable": "false"
+                },
+                {
+                    "id": "created_at",
+                    "name": "created_at",
+                    "type": "datetime",
+                    "nullable": "false"
+                },
+                {
+                    "id": "updated_at",
+                    "name": "updated_at",
+                    "type": "datetime",
+                    "nullable": "false"
+                },
+                {
+                    "id": "deleted_at",
+                    "name": "deleted_at",
+                    "type": "datetime",
+                    "nullable": "false"
+                }
+            ]
+        },
+        {
+            "id": "mutuals",
+            "name": "mutuals",
+            "rows": [
+                {
+                    "id": "id",
+                    "name": "id",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "from_user_id",
+                    "name": "from_user_id",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "to_user_id",
+                    "name": "to_user_id",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "score",
+                    "name": "score",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "mutual",
+                    "name": "mutual",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "created_at",
+                    "name": "created_at",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "updated_at",
+                    "name": "updated_at",
+                    "type": "blob",
+                    "nullable": "false"
+                }
+            ]
+        },
+        {
+            "id": "mydbops_lab_test",
+            "name": "mydbops_lab_test",
+            "rows": [
+                {
+                    "id": "id",
+                    "name": "id",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "firstname",
+                    "name": "firstname",
+                    "type": "var_string",
+                    "nullable": "false"
+                },
+                {
+                    "id": "lastname",
+                    "name": "lastname",
+                    "type": "var_string",
+                    "nullable": "false"
+                },
+                {
+                    "id": "full_name",
+                    "name": "full_name",
+                    "type": "string",
+                    "nullable": "false"
+                },
+                {
+                    "id": "email_id",
+                    "name": "email_id",
+                    "type": "var_string",
+                    "nullable": "false"
+                }
+            ]
+        },
+        {
+            "id": "playlists",
+            "name": "playlists",
+            "rows": [
+                {
+                    "id": "playlist_id",
+                    "name": "playlist_id",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "playlist_name",
+                    "name": "playlist_name",
+                    "type": "var_string",
+                    "nullable": "false"
+                },
+                {
+                    "id": "playlist_key",
+                    "name": "playlist_key",
+                    "type": "var_string",
+                    "nullable": "false"
+                },
+                {
+                    "id": "playlist_description",
+                    "name": "playlist_description",
+                    "type": "var_string",
+                    "nullable": "false"
+                },
+                {
+                    "id": "game_mode_list",
+                    "name": "game_mode_list",
+                    "type": "var_string",
+                    "nullable": "false"
+                },
+                {
+                    "id": "config_id",
+                    "name": "config_id",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "min_players",
+                    "name": "min_players",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "max_players",
+                    "name": "max_players",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "max_spectators",
+                    "name": "max_spectators",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "is_ranked",
+                    "name": "is_ranked",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "is_visible",
+                    "name": "is_visible",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "is_enabled",
+                    "name": "is_enabled",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "item_order",
+                    "name": "item_order",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "game_version",
+                    "name": "game_version",
+                    "type": "short",
+                    "nullable": "false"
+                }
+            ]
+        },
+        {
+            "id": "sample",
+            "name": "sample",
+            "rows": [
+                {
+                    "id": "id",
+                    "name": "id",
+                    "type": "string",
+                    "nullable": "false"
+                },
+                {
+                    "id": "foo",
+                    "name": "foo",
+                    "type": "short",
+                    "nullable": "false"
+                }
+            ]
+        },
+        {
+            "id": "students",
+            "name": "students",
+            "rows": [
+                {
+                    "id": "student_id",
+                    "name": "student_id",
+                    "type": "longlong",
+                    "nullable": "false"
+                },
+                {
+                    "id": "student_name",
+                    "name": "student_name",
+                    "type": "var_string",
+                    "nullable": "false"
+                },
+                {
+                    "id": "photo",
+                    "name": "photo",
+                    "type": "blob",
+                    "nullable": "false"
+                }
+            ]
+        },
+        {
+            "id": "sys_city",
+            "name": "sys_city",
+            "rows": [
+                {
+                    "id": "id",
+                    "name": "id",
+                    "type": "long",
+                    "nullable": "false"
+                }
+            ]
+        },
+        {
+            "id": "table_blob",
+            "name": "table_blob",
+            "rows": [
+                {
+                    "id": "id",
+                    "name": "id",
+                    "type": "longlong",
+                    "nullable": "false"
+                },
+                {
+                    "id": "content",
+                    "name": "content",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "aaa",
+                    "name": "aaa",
+                    "type": "json",
+                    "nullable": "false"
+                }
+            ]
+        },
+        {
+            "id": "testing",
+            "name": "testing",
+            "rows": [
+                {
+                    "id": "example_text",
+                    "name": "example_text",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "example_varchar",
+                    "name": "example_varchar",
+                    "type": "var_string",
+                    "nullable": "false"
+                }
+            ]
+        },
+        {
+            "id": "untitled_table_23",
+            "name": "untitled_table_23",
+            "rows": [
+                {
+                    "id": "id",
+                    "name": "id",
+                    "type": "longlong",
+                    "nullable": "false"
+                }
+            ]
+        },
+        {
+            "id": "untitled_view_28",
+            "name": "untitled_view_28",
+            "rows": [
+                {
+                    "id": "id",
+                    "name": "id",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "comment",
+                    "name": "comment",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "from_user_id",
+                    "name": "from_user_id",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "to_user_id",
+                    "name": "to_user_id",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "created_at",
+                    "name": "created_at",
+                    "type": "timestamp",
+                    "nullable": "false"
+                },
+                {
+                    "id": "updated_at",
+                    "name": "updated_at",
+                    "type": "timestamp",
+                    "nullable": "false"
+                },
+                {
+                    "id": "item_id",
+                    "name": "item_id",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "disable",
+                    "name": "disable",
+                    "type": "tiny",
+                    "nullable": "false"
+                }
+            ]
+        },
+        {
+            "id": "users",
+            "name": "users",
+            "rows": [
+                {
+                    "id": "strap",
+                    "name": "strap",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "web_strap",
+                    "name": "web_strap",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "owner1",
+                    "name": "owner1",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "owner2",
+                    "name": "owner2",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "mailto",
+                    "name": "mailto",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "address1",
+                    "name": "address1",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "address2",
+                    "name": "address2",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "city",
+                    "name": "city",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "state",
+                    "name": "state",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "zip",
+                    "name": "zip",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "country",
+                    "name": "country",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "tax_district_cd",
+                    "name": "tax_district_cd",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "subdivision_name",
+                    "name": "subdivision_name",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "rgtwsc",
+                    "name": "rgtwsc",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "rgtw",
+                    "name": "rgtw",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "sb",
+                    "name": "sb",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "contamination",
+                    "name": "contamination",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "frontage",
+                    "name": "frontage",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "future_l1_use",
+                    "name": "future_l1_use",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "future_l2_use",
+                    "name": "future_l2_use",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "future_l3_use",
+                    "name": "future_l3_use",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "future_l4_use",
+                    "name": "future_l4_use",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "legal",
+                    "name": "legal",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "plat_book_page",
+                    "name": "plat_book_page",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "subsidence",
+                    "name": "subsidence",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "views",
+                    "name": "views",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "seawall",
+                    "name": "seawall",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "property_use_description",
+                    "name": "property_use_description",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "property_use",
+                    "name": "property_use",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "or_book_page",
+                    "name": "or_book_page",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "total_living_units",
+                    "name": "total_living_units",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "ct_cd",
+                    "name": "ct_cd",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "nh_cd",
+                    "name": "nh_cd",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "sale_date",
+                    "name": "sale_date",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "book_page",
+                    "name": "book_page",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "row_number",
+                    "name": "row_number",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "price",
+                    "name": "price",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "qu",
+                    "name": "qu",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "vi",
+                    "name": "vi",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "note",
+                    "name": "note",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "month_real",
+                    "name": "month_real",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "day_real",
+                    "name": "day_real",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "grantee",
+                    "name": "grantee",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "grantor",
+                    "name": "grantor",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "building_no",
+                    "name": "building_no",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "impr_tp",
+                    "name": "impr_tp",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "description",
+                    "name": "description",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "impr_mdl_cd",
+                    "name": "impr_mdl_cd",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "foundation",
+                    "name": "foundation",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "floor_system",
+                    "name": "floor_system",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "exterior_wall",
+                    "name": "exterior_wall",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "complex_view",
+                    "name": "complex_view",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "location",
+                    "name": "location",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "parking_garage",
+                    "name": "parking_garage",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "balcony_porch",
+                    "name": "balcony_porch",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "building",
+                    "name": "building",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "roof_frame",
+                    "name": "roof_frame",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "roof_cover",
+                    "name": "roof_cover",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "stories",
+                    "name": "stories",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "floor_finish",
+                    "name": "floor_finish",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "interior_finish",
+                    "name": "interior_finish",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "fixtures",
+                    "name": "fixtures",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "living_units",
+                    "name": "living_units",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "quality",
+                    "name": "quality",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "square_footage",
+                    "name": "square_footage",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "heated_area",
+                    "name": "heated_area",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "year_built",
+                    "name": "year_built",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "effective_age",
+                    "name": "effective_age",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "heating",
+                    "name": "heating",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "cooling",
+                    "name": "cooling",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "other_depreciation",
+                    "name": "other_depreciation",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "functional_depreciation",
+                    "name": "functional_depreciation",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "economic_depreciation",
+                    "name": "economic_depreciation",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "floor_no",
+                    "name": "floor_no",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "dpr_bld_val",
+                    "name": "dpr_bld_val",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "site_city",
+                    "name": "site_city",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "ln_num",
+                    "name": "ln_num",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "soundx_str",
+                    "name": "soundx_str",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "str",
+                    "name": "str",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "site_bld_num",
+                    "name": "site_bld_num",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "str_num",
+                    "name": "str_num",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "str_num_sfx",
+                    "name": "str_num_sfx",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "str_pfx",
+                    "name": "str_pfx",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "str_sfx",
+                    "name": "str_sfx",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "str_sfx_dir",
+                    "name": "str_sfx_dir",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "str_unit",
+                    "name": "str_unit",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "site_zip",
+                    "name": "site_zip",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "xfeat_description",
+                    "name": "xfeat_description",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "value",
+                    "name": "value",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "units",
+                    "name": "units",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "total_new_value",
+                    "name": "total_new_value",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "depreciated_value",
+                    "name": "depreciated_value",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "year",
+                    "name": "year",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "homestead",
+                    "name": "homestead",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "historic",
+                    "name": "historic",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "soh_cap_pct",
+                    "name": "soh_cap_pct",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "hx_base_year",
+                    "name": "hx_base_year",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "nhx_base_year",
+                    "name": "nhx_base_year",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "comp_sales",
+                    "name": "comp_sales",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "just_building",
+                    "name": "just_building",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "just_land",
+                    "name": "just_land",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "just_xf",
+                    "name": "just_xf",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "just_market_value",
+                    "name": "just_market_value",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "municipal_taxable_value",
+                    "name": "municipal_taxable_value",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "school_taxable_value",
+                    "name": "school_taxable_value",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "assessed_value_soh_cap",
+                    "name": "assessed_value_soh_cap",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "taxable_value",
+                    "name": "taxable_value",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "tax_district",
+                    "name": "tax_district",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "land_use_code",
+                    "name": "land_use_code",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "millage",
+                    "name": "millage",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "tax_amount_no_ex",
+                    "name": "tax_amount_no_ex",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "special_assessment",
+                    "name": "special_assessment",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "status_cd",
+                    "name": "status_cd",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "status_cd_dscr",
+                    "name": "status_cd_dscr",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "res_com_condo",
+                    "name": "res_com_condo",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "non_hx_cap",
+                    "name": "non_hx_cap",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "tif_flag_type",
+                    "name": "tif_flag_type",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "tif_flag_type_dscr",
+                    "name": "tif_flag_type_dscr",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "evac_val",
+                    "name": "evac_val",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "evac_flag_type",
+                    "name": "evac_flag_type",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "evac_flag_type_dscr",
+                    "name": "evac_flag_type_dscr",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "tax_district_description",
+                    "name": "tax_district_description",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "dlhl_flag_type",
+                    "name": "dlhl_flag_type",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "hx_savings",
+                    "name": "hx_savings",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "tot_effective_area",
+                    "name": "tot_effective_area",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "tot_gross_area",
+                    "name": "tot_gross_area",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "tot_living_area",
+                    "name": "tot_living_area",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "est_taxes_text",
+                    "name": "est_taxes_text",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "mill_yr",
+                    "name": "mill_yr",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "hx_cap",
+                    "name": "hx_cap",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "land_size",
+                    "name": "land_size",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "unit_value",
+                    "name": "unit_value",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "land_units",
+                    "name": "land_units",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "method",
+                    "name": "method",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "land_use",
+                    "name": "land_use",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "acreage",
+                    "name": "acreage",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "val",
+                    "name": "val",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "total_adjustments",
+                    "name": "total_adjustments",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "land_use_cd",
+                    "name": "land_use_cd",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "land_use_dscr",
+                    "name": "land_use_dscr",
+                    "type": "blob",
+                    "nullable": "false"
+                },
+                {
+                    "id": "address_match",
+                    "name": "address_match",
+                    "type": "blob",
+                    "nullable": "false"
+                }
+            ]
+        },
+        {
+            "id": "weapon_types",
+            "name": "weapon_types",
+            "rows": [
+                {
+                    "id": "weapon_type_id",
+                    "name": "weapon_type_id",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "type_name",
+                    "name": "type_name",
+                    "type": "var_string",
+                    "nullable": "false"
+                },
+                {
+                    "id": "category_id",
+                    "name": "category_id",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "challenge_id",
+                    "name": "challenge_id",
+                    "type": "short",
+                    "nullable": "false"
+                },
+                {
+                    "id": "weapon_description",
+                    "name": "weapon_description",
+                    "type": "var_string",
+                    "nullable": "false"
+                },
+                {
+                    "id": "is_primary",
+                    "name": "is_primary",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "rarity_id",
+                    "name": "rarity_id",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "level_id",
+                    "name": "level_id",
+                    "type": "short",
+                    "nullable": "false"
+                },
+                {
+                    "id": "blueprints_needed",
+                    "name": "blueprints_needed",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "stance_id",
+                    "name": "stance_id",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "damage_delta",
+                    "name": "damage_delta",
+                    "type": "decimal",
+                    "nullable": "false"
+                },
+                {
+                    "id": "range_delta",
+                    "name": "range_delta",
+                    "type": "decimal",
+                    "nullable": "false"
+                },
+                {
+                    "id": "firerate_delta",
+                    "name": "firerate_delta",
+                    "type": "decimal",
+                    "nullable": "false"
+                },
+                {
+                    "id": "accuracy_delta",
+                    "name": "accuracy_delta",
+                    "type": "decimal",
+                    "nullable": "false"
+                },
+                {
+                    "id": "mobility_delta",
+                    "name": "mobility_delta",
+                    "type": "decimal",
+                    "nullable": "false"
+                },
+                {
+                    "id": "in_packs",
+                    "name": "in_packs",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "is_enabled",
+                    "name": "is_enabled",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "game_version",
+                    "name": "game_version",
+                    "type": "short",
+                    "nullable": "false"
+                }
+            ]
+        },
+        {
+            "id": "weapons",
+            "name": "weapons",
+            "rows": [
+                {
+                    "id": "weapon_id",
+                    "name": "weapon_id",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "weapon_name",
+                    "name": "weapon_name",
+                    "type": "var_string",
+                    "nullable": "false"
+                },
+                {
+                    "id": "weapon_description",
+                    "name": "weapon_description",
+                    "type": "var_string",
+                    "nullable": "false"
+                },
+                {
+                    "id": "child_weapon_id",
+                    "name": "child_weapon_id",
+                    "type": "short",
+                    "nullable": "false"
+                },
+                {
+                    "id": "weapon_type_id",
+                    "name": "weapon_type_id",
+                    "type": "short",
+                    "nullable": "false"
+                },
+                {
+                    "id": "weapon_level",
+                    "name": "weapon_level",
+                    "type": "short",
+                    "nullable": "false"
+                },
+                {
+                    "id": "rarity_id",
+                    "name": "rarity_id",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "bundle_id",
+                    "name": "bundle_id",
+                    "type": "short",
+                    "nullable": "false"
+                },
+                {
+                    "id": "weight",
+                    "name": "weight",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "ammo",
+                    "name": "ammo",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "damage",
+                    "name": "damage",
+                    "type": "short",
+                    "nullable": "false"
+                },
+                {
+                    "id": "damage_radius",
+                    "name": "damage_radius",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "projectile_size",
+                    "name": "projectile_size",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "force",
+                    "name": "force",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "force_base",
+                    "name": "force_base",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "force_gravity",
+                    "name": "force_gravity",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "force_acceleration",
+                    "name": "force_acceleration",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "force_rotation",
+                    "name": "force_rotation",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "force_bounce",
+                    "name": "force_bounce",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "force_curve",
+                    "name": "force_curve",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "shoot_amount",
+                    "name": "shoot_amount",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "burst_amount",
+                    "name": "burst_amount",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "burst_interval",
+                    "name": "burst_interval",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "shoot_delay",
+                    "name": "shoot_delay",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "shoot_charge",
+                    "name": "shoot_charge",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "shoot_release",
+                    "name": "shoot_release",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "shoot_interval",
+                    "name": "shoot_interval",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "shoot_cooldown_delay",
+                    "name": "shoot_cooldown_delay",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "shoot_cooldown",
+                    "name": "shoot_cooldown",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "shoot_inaccuracy",
+                    "name": "shoot_inaccuracy",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "shoot_sway",
+                    "name": "shoot_sway",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "shoot_knockback",
+                    "name": "shoot_knockback",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "hit_knockback",
+                    "name": "hit_knockback",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "explode_time",
+                    "name": "explode_time",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "sticky_explode_time",
+                    "name": "sticky_explode_time",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "can_headshot",
+                    "name": "can_headshot",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "can_teleport",
+                    "name": "can_teleport",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "can_gib",
+                    "name": "can_gib",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "can_aim",
+                    "name": "can_aim",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "is_exploding",
+                    "name": "is_exploding",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "is_melee",
+                    "name": "is_melee",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "is_sticky",
+                    "name": "is_sticky",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "is_incendiary",
+                    "name": "is_incendiary",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "is_stun",
+                    "name": "is_stun",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "is_penetrating",
+                    "name": "is_penetrating",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "is_equippable",
+                    "name": "is_equippable",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "is_clipping",
+                    "name": "is_clipping",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "is_fragmenting",
+                    "name": "is_fragmenting",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "in_packs",
+                    "name": "in_packs",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "is_mystery",
+                    "name": "is_mystery",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "is_visible",
+                    "name": "is_visible",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "is_enabled",
+                    "name": "is_enabled",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "game_version",
+                    "name": "game_version",
+                    "type": "short",
+                    "nullable": "false"
+                },
+                {
+                    "id": "recoil",
+                    "name": "recoil",
+                    "type": "decimal",
+                    "nullable": "false"
+                },
+                {
+                    "id": "damage_mod_delta",
+                    "name": "damage_mod_delta",
+                    "type": "decimal",
+                    "nullable": "false"
+                },
+                {
+                    "id": "range_mod_delta",
+                    "name": "range_mod_delta",
+                    "type": "decimal",
+                    "nullable": "false"
+                },
+                {
+                    "id": "firerate_mod_delta",
+                    "name": "firerate_mod_delta",
+                    "type": "decimal",
+                    "nullable": "false"
+                },
+                {
+                    "id": "accuracy_mod_delta",
+                    "name": "accuracy_mod_delta",
+                    "type": "decimal",
+                    "nullable": "false"
+                },
+                {
+                    "id": "mobility_mod_delta",
+                    "name": "mobility_mod_delta",
+                    "type": "decimal",
+                    "nullable": "false"
+                }
+            ]
+        },
+        {
+            "id": "weapons_x",
+            "name": "weapons_x",
+            "rows": [
+                {
+                    "id": "weapon_id",
+                    "name": "weapon_id",
+                    "type": "long",
+                    "nullable": "false"
+                },
+                {
+                    "id": "weapon_name",
+                    "name": "weapon_name",
+                    "type": "var_string",
+                    "nullable": "false"
+                },
+                {
+                    "id": "weapon_description",
+                    "name": "weapon_description",
+                    "type": "var_string",
+                    "nullable": "false"
+                },
+                {
+                    "id": "child_weapon_id",
+                    "name": "child_weapon_id",
+                    "type": "short",
+                    "nullable": "false"
+                },
+                {
+                    "id": "weapon_type_id",
+                    "name": "weapon_type_id",
+                    "type": "short",
+                    "nullable": "false"
+                },
+                {
+                    "id": "weapon_level",
+                    "name": "weapon_level",
+                    "type": "short",
+                    "nullable": "false"
+                },
+                {
+                    "id": "rarity_id",
+                    "name": "rarity_id",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "bundle_id",
+                    "name": "bundle_id",
+                    "type": "short",
+                    "nullable": "false"
+                },
+                {
+                    "id": "weight",
+                    "name": "weight",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "ammo",
+                    "name": "ammo",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "damage",
+                    "name": "damage",
+                    "type": "short",
+                    "nullable": "false"
+                },
+                {
+                    "id": "damage_radius",
+                    "name": "damage_radius",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "projectile_size",
+                    "name": "projectile_size",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "force",
+                    "name": "force",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "force_base",
+                    "name": "force_base",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "force_gravity",
+                    "name": "force_gravity",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "force_acceleration",
+                    "name": "force_acceleration",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "force_rotation",
+                    "name": "force_rotation",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "force_bounce",
+                    "name": "force_bounce",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "force_curve",
+                    "name": "force_curve",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "shoot_amount",
+                    "name": "shoot_amount",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "burst_amount",
+                    "name": "burst_amount",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "burst_interval",
+                    "name": "burst_interval",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "shoot_delay",
+                    "name": "shoot_delay",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "shoot_charge",
+                    "name": "shoot_charge",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "shoot_release",
+                    "name": "shoot_release",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "shoot_interval",
+                    "name": "shoot_interval",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "shoot_cooldown_delay",
+                    "name": "shoot_cooldown_delay",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "shoot_cooldown",
+                    "name": "shoot_cooldown",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "shoot_inaccuracy",
+                    "name": "shoot_inaccuracy",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "shoot_sway",
+                    "name": "shoot_sway",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "shoot_knockback",
+                    "name": "shoot_knockback",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "hit_knockback",
+                    "name": "hit_knockback",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "explode_time",
+                    "name": "explode_time",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "sticky_explode_time",
+                    "name": "sticky_explode_time",
+                    "type": "float",
+                    "nullable": "false"
+                },
+                {
+                    "id": "can_headshot",
+                    "name": "can_headshot",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "can_teleport",
+                    "name": "can_teleport",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "can_gib",
+                    "name": "can_gib",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "can_aim",
+                    "name": "can_aim",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "is_exploding",
+                    "name": "is_exploding",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "is_melee",
+                    "name": "is_melee",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "is_sticky",
+                    "name": "is_sticky",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "is_incendiary",
+                    "name": "is_incendiary",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "is_stun",
+                    "name": "is_stun",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "is_penetrating",
+                    "name": "is_penetrating",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "is_equippable",
+                    "name": "is_equippable",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "is_clipping",
+                    "name": "is_clipping",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "is_fragmenting",
+                    "name": "is_fragmenting",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "in_packs",
+                    "name": "in_packs",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "is_mystery",
+                    "name": "is_mystery",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "is_visible",
+                    "name": "is_visible",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "is_enabled",
+                    "name": "is_enabled",
+                    "type": "tiny",
+                    "nullable": "false"
+                },
+                {
+                    "id": "game_version",
+                    "name": "game_version",
+                    "type": "short",
+                    "nullable": "false"
+                },
+                {
+                    "id": "recoil",
+                    "name": "recoil",
+                    "type": "decimal",
+                    "nullable": "false"
+                },
+                {
+                    "id": "damage_mod_delta",
+                    "name": "damage_mod_delta",
+                    "type": "decimal",
+                    "nullable": "false"
+                },
+                {
+                    "id": "range_mod_delta",
+                    "name": "range_mod_delta",
+                    "type": "decimal",
+                    "nullable": "false"
+                },
+                {
+                    "id": "firerate_mod_delta",
+                    "name": "firerate_mod_delta",
+                    "type": "decimal",
+                    "nullable": "false"
+                },
+                {
+                    "id": "accuracy_mod_delta",
+                    "name": "accuracy_mod_delta",
+                    "type": "decimal",
+                    "nullable": "false"
+                },
+                {
+                    "id": "mobility_mod_delta",
+                    "name": "mobility_mod_delta",
+                    "type": "decimal",
+                    "nullable": "false"
+                }
+            ]
+        },
+        {
+            "id": "CustomerLevel",
+            "name": "CustomerLevel",
+            "rows": []
+        },
+        {
+            "id": "GetAllProducts",
+            "name": "GetAllProducts",
+            "rows": []
+        }
+    ],
+    "refs": [],
+    "schema": "main",
+    "$schema": "https://diagramplus.com/diagram-schema.json"
+}

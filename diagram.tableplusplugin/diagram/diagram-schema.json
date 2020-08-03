@@ -9,37 +9,38 @@
             "type": "object",
             "properties": {
                 "id": { "type": "string" },
-                "type": { "enum": ["string", "boolean"] }
+                "name": { "type": "string" },
+                "type": { "type": "string" }
             },
             "additionalProperties": false,
-            "required": ["id", "type"]
+            "required": ["id", "type", "name"]
         },
         "row": {
             "type": "object",
             "properties": {
-                "id": { "type": "string" },
-                "icon": { "enum": ["key1", "key2"] },
-                "fields": {
-                    "type": "array",
-                    "items": {
-                        "anyOf": [{ "type": "string" }, { "type": "boolean" }]
-                    }
-                }
+                "id": { "type": "string" }
             },
-            "additionalProperties": false,
-            "required": ["id", "fields"]
+            "additionalProperties": {
+                "type": "string"
+            },
+            "required": ["id"]
         },
         "ref-side": {
             "type": "object",
             "properties": {
-                "table": { "type": "string" },
+                "name": {
+                    "type": "string"
+                },
+                "schema": {
+                    "type": "string"
+                },
                 "rows": {
                     "type": "array",
                     "items": { "type": "string" }
                 }
             },
             "additionalProperties": false,
-            "required": ["table", "rows"]
+            "required": ["name", "rows"]
         },
         "ref": {
             "type": "object",
@@ -50,12 +51,12 @@
             "additionalProperties": false,
             "required": ["from", "to"]
         },
-        "table": {
+        "item": {
             "type": "object",
             "properties": {
-                "id": {
-                    "type": "string"
-                },
+                "id": { "type": "string" },
+                "name": { "type": "string" },
+                "schema": { "type": "string" },
                 "rows": {
                     "type": "array",
                     "items": {
@@ -64,32 +65,29 @@
                 }
             },
             "additionalProperties": false,
-            "required": ["id", "rows"]
+            "required": ["id", "name", "rows"]
         }
     },
     "properties": {
         "columns": {
             "type": "array",
-            "items": {
-                "$ref": "#/definitions/column"
-            }
+            "items": { "$ref": "#/definitions/column" }
         },
-        "tables": {
+        "schema": {
+            "type": "string"
+        },
+        "items": {
             "type": "array",
-            "items": {
-                "$ref": "#/definitions/table"
-            }
+            "items": { "$ref": "#/definitions/item" }
         },
         "refs": {
             "type": "array",
-            "items": {
-                "$ref": "#/definitions/ref"
-            }
+            "items": { "$ref": "#/definitions/ref" }
         },
         "$schema": {
             "type": "string"
         }
     },
     "additionalProperties": false,
-    "required": ["columns", "tables", "refs"]
+    "required": ["schema", "columns", "items", "refs"]
 }
