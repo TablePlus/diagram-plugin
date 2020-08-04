@@ -2,6 +2,10 @@
 
 import { getItemPostgreSQLJson, getItemMySQLJson, getItemSQLServerJson, getItemJson } from './library/helper';
 
+var escapeStr = function(data) {
+	return "'" + JSON.stringify(data).split("'").join("\\'") + "'";
+}
+
 var newDiagram = function(context) {
 	var build = parseInt(Application.appBuild(), 10);
 	if (build < 330) {
@@ -35,7 +39,7 @@ var generateDiagram = function(context) {
 	case "MySQL":
 		getItemMySQLJson(context, [], webView, function (data) {
 			webView.evaluate("window.Diagram.setProgressIndicator(false, 'Loading...')");
-			webView.evaluate("window.Diagram.importDiagram('" + JSON.stringify(data) + "')", function (result) {
+			webView.evaluate("window.Diagram.importDiagram(" + escapeStr(data) + ")", function (result) {
 				if (result["error"] != null) {
 					context.alert("Hey", result["error"]);
 				}
@@ -45,7 +49,7 @@ var generateDiagram = function(context) {
 	case "PostgreSQL":
 		getItemPostgreSQLJson(context, [], webView, function (data) {
 			webView.evaluate("window.Diagram.setProgressIndicator(false, 'Loading...')");
-			webView.evaluate("window.Diagram.importDiagram('" + JSON.stringify(data) + "')", function (result) {
+			webView.evaluate("window.Diagram.importDiagram(" + escapeStr(data)  + ")", function (result) {
 				if (result["error"] != null) {
 					context.alert("Hey", result["error"]);
 				}
@@ -55,7 +59,7 @@ var generateDiagram = function(context) {
 	case "MicrosoftSQLServer":
 		getItemSQLServerJson(context, [], webView, function (data) {
 			webView.evaluate("window.Diagram.setProgressIndicator(false, 'Loading...')");
-			webView.evaluate("window.Diagram.importDiagram('" + JSON.stringify(data) + "')", function (result) {
+			webView.evaluate("window.Diagram.importDiagram(" + escapeStr(data)  + ")", function (result) {
 				if (result["error"] != null) {
 					context.alert("Hey", result["error"]);
 				}
@@ -66,7 +70,7 @@ var generateDiagram = function(context) {
 		var items = context.items();
 		getItemJson(context, items, webView, function (data) {
 			webView.evaluate("window.Diagram.setProgressIndicator(false, 'Loading...')");
-			webView.evaluate("window.Diagram.importDiagram('" + JSON.stringify(data) + "')", function (result) {
+			webView.evaluate("window.Diagram.importDiagram(" + escapeStr(data)  + ")", function (result) {
 				if (result["error"] != null) {
 					context.alert("Hey", result["error"]);
 				}
@@ -98,7 +102,7 @@ var generateDiagramSelectedItems = function(context) {
 	case "MySQL":
 		getItemMySQLJson(context, items, webView, function (data) {
 			webView.evaluate("window.Diagram.setProgressIndicator(false, 'Loading...')");
-			webView.evaluate("window.Diagram.importDiagram('" + JSON.stringify(data) + "')", function (result) {
+			webView.evaluate("window.Diagram.importDiagram(" + escapeStr(data)  + ")", function (result) {
 				if (result["error"] != null) {
 					context.alert("Hey", result["error"]);
 				}
@@ -108,7 +112,7 @@ var generateDiagramSelectedItems = function(context) {
 	case "PostgreSQL":
 		getItemPostgreSQLJson(context, items, webView, function (data) {
 			webView.evaluate("window.Diagram.setProgressIndicator(false, 'Loading...')");
-			webView.evaluate("window.Diagram.importDiagram('" + JSON.stringify(data) + "')", function (result) {
+			webView.evaluate("window.Diagram.importDiagram(" + escapeStr(data)  + ")", function (result) {
 				if (result["error"] != null) {
 					context.alert("Hey", result["error"]);
 				}
@@ -118,7 +122,7 @@ var generateDiagramSelectedItems = function(context) {
 	case "MicrosoftSQLServer":
 		getItemSQLServerJson(context, items, webView, function (data) {
 			webView.evaluate("window.Diagram.setProgressIndicator(false, 'Loading...')");
-			webView.evaluate("window.Diagram.importDiagram('" + JSON.stringify(data) + "')", function (result) {
+			webView.evaluate("window.Diagram.importDiagram(" + escapeStr(data)  + ")", function (result) {
 				if (result["error"] != null) {
 					context.alert("Hey", result["error"]);
 				}
@@ -128,7 +132,7 @@ var generateDiagramSelectedItems = function(context) {
 	default:
 		getItemJson(context, items, webView, function (data) {
 			webView.evaluate("window.Diagram.setProgressIndicator(false, 'Loading...')");
-			webView.evaluate("window.Diagram.importDiagram('" + JSON.stringify(data) + "')", function (result) {
+			webView.evaluate("window.Diagram.importDiagram(" + escapeStr(data)  + ")", function (result) {
 				if (result["error"] != null) {
 					context.alert("Hey", result["error"]);
 				}
