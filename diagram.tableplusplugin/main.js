@@ -8,12 +8,24 @@ var escapeStr = function(data) {
 
 var newDiagram = function(context) {
 	var build = parseInt(Application.appBuild(), 10);
-	if (build < 330) {
+	var platform = Application.platform();
+	if (build < 330 && platform == "macOS") {
 		context.alert("Warning", "Please update TablePlus to the build 330 or newer.");
 		return;
 	};
+	if (build < 138 && platform == "Windows") {
+		context.alert("Warning", "Please update TablePlus to the build 138 or newer.");
+		return;
+	};
+
 	var workingPath = Application.pluginRootPath() + "/com.tableplus.TablePlus.diagram.tableplusplugin/diagram/index.html"
 	var webView = context.loadFile(workingPath, null);
+
+	// Windows does not support auto theme
+	if (platform == "Windows") {
+		var theme = context.currentThemeName();
+		webView.evaluate("window.Diagram.setTheme('" + theme + "');");
+	}
 
 	// Disable menu context
 	webView.evaluate("document.body.setAttribute('oncontextmenu', 'event.preventDefault();');");
@@ -21,12 +33,24 @@ var newDiagram = function(context) {
 
 var generateDiagram = function(context) {
 	var build = parseInt(Application.appBuild(), 10);
-	if (build < 330) {
+	var platform = Application.platform();
+	if (build < 330 && platform == "macOS") {
 		context.alert("Warning", "Please update TablePlus to the build 330 or newer.");
 		return;
 	};
+	if (build < 138 && platform == "Windows") {
+		context.alert("Warning", "Please update TablePlus to the build 138 or newer.");
+		return;
+	};
+
 	var workingPath = Application.pluginRootPath() + "/com.tableplus.TablePlus.diagram.tableplusplugin/diagram/index.html"
 	var webView = context.loadFile(workingPath, null);
+
+	// Windows does not support auto theme
+	if (platform == "Windows") {
+		var theme = context.currentThemeName();
+		webView.evaluate("window.Diagram.setTheme('" + theme + "');");
+	}
 
 	// Show indicator
 	webView.evaluate("window.Diagram.setProgressIndicator(true, 'Loading...')");
@@ -37,6 +61,7 @@ var generateDiagram = function(context) {
     var driver = context.driver();
 	switch (driver) {
 	case "MySQL":
+	case "MariaDB":
 		getItemMySQLJson(context, [], webView, function (data) {
 			webView.evaluate("window.Diagram.setProgressIndicator(false, 'Loading...')");
 			webView.evaluate("window.Diagram.importDiagramObject(" + escapeStr(data) + ")", function (result) {
@@ -47,6 +72,8 @@ var generateDiagram = function(context) {
 		});
 		break;
 	case "PostgreSQL":
+	case "Redshift":
+	case "Greenplum":
 		getItemPostgreSQLJson(context, [], webView, function (data) {
 			webView.evaluate("window.Diagram.setProgressIndicator(false, 'Loading...')");
 			webView.evaluate("window.Diagram.importDiagramObject(" + escapeStr(data)  + ")", function (result) {
@@ -82,12 +109,24 @@ var generateDiagram = function(context) {
 
 var generateDiagramSelectedItems = function(context) {
 	var build = parseInt(Application.appBuild(), 10);
-	if (build < 330) {
+	var platform = Application.platform();
+	if (build < 330 && platform == "macOS") {
 		context.alert("Warning", "Please update TablePlus to the build 330 or newer.");
 		return;
 	};
+	if (build < 138 && platform == "Windows") {
+		context.alert("Warning", "Please update TablePlus to the build 138 or newer.");
+		return;
+	};
+
 	var workingPath = Application.pluginRootPath() + "/com.tableplus.TablePlus.diagram.tableplusplugin/diagram/index.html"
 	var webView = context.loadFile(workingPath, null);
+
+	// Windows does not support auto theme
+	if (platform == "Windows") {
+		var theme = context.currentThemeName();
+		webView.evaluate("window.Diagram.setTheme('" + theme + "');");
+	}
 
 	// Show indicator
 	webView.evaluate("window.Diagram.setProgressIndicator(true, 'Loading...')");
