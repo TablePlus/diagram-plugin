@@ -1,0 +1,126 @@
+{
+    "columns": [
+        { "id": "0", "name": "name", "type": "string" },
+        { "id": "1", "name": "type", "type": "string" },
+        { "id": "2", "name": "nullable", "type": "boolean" }
+    ],
+    "items": [
+        {
+            "id": "table",
+            "name": "dept_emp",
+            "schema": "new",
+            "rows": [
+                { "id": "column", "name": "emp_no", "type": "int(11)" },
+                { "id": "column_2", "name": "dept_no", "type": "char(4)" },
+                { "id": "column_3", "name": "from_date", "type": "date" },
+                { "id": "column_4", "name": "to_date", "type": "date" }
+            ]
+        },
+        {
+            "id": "table_2",
+            "name": "departments",
+            "schema": "new",
+            "rows": [
+                { "id": "column", "name": "dept_no", "type": "char(4)" },
+                { "id": "column_2", "name": "dept_name", "type": "varchar(40)" }
+            ]
+        },
+        {
+            "id": "table_3",
+            "name": "dept_manager",
+            "schema": "new",
+            "rows": [
+                { "id": "column", "name": "dept_no", "type": "char(4)" },
+                { "id": "column_2", "name": "emp_no", "type": "int(11)" },
+                { "id": "column_3", "name": "from_date", "type": "date" },
+                { "id": "column_4", "name": "to_date", "type": "date" }
+            ]
+        },
+        {
+            "id": "table_4",
+            "name": "employees",
+            "schema": "new",
+            "rows": [
+                { "id": "column", "name": "emp_no", "type": "int(11)" },
+                { "id": "column_2", "name": "birth_date", "type": "date" },
+                {
+                    "id": "column_3",
+                    "name": "first_name",
+                    "type": "varchar(14)"
+                },
+                {
+                    "id": "column_4",
+                    "name": "last_name",
+                    "type": "varchar(16)"
+                },
+                {
+                    "id": "column_5",
+                    "name": "gender",
+                    "type": "enum('M', 'F')"
+                },
+                { "id": "column_6", "name": "hire_date", "type": "date" }
+            ]
+        },
+        {
+            "id": "table_5",
+            "name": "titles",
+            "schema": "new",
+            "rows": [
+                { "id": "column", "name": "emp_no", "type": "int(11)" },
+                { "id": "column_2", "name": "title", "type": "varchar(50)" },
+                { "id": "column_3", "name": "from_date", "type": "date" },
+                { "id": "column_4", "name": "to_date", "type": "date" }
+            ]
+        },
+        {
+            "id": "table_6",
+            "name": "salaries",
+            "schema": "new",
+            "rows": [
+                { "id": "column", "name": "emp_no", "type": "int(11)" },
+                { "id": "column_2", "name": "salary", "type": "int(11)" },
+                { "id": "column_3", "name": "from_date", "type": "date" },
+                { "id": "column_4", "name": "to_date", "type": "date" }
+            ]
+        }
+    ],
+    "refs": [
+        {
+            "from": {
+                "name": "dept_emp",
+                "schema": "new",
+                "rows": ["column_2"]
+            },
+            "to": { "name": "departments", "schema": "new", "rows": ["column"] }
+        },
+        {
+            "from": {
+                "name": "dept_manager",
+                "schema": "new",
+                "rows": ["column"]
+            },
+            "to": { "name": "departments", "schema": "new", "rows": ["column"] }
+        },
+        {
+            "from": {
+                "name": "dept_manager",
+                "schema": "new",
+                "rows": ["column_2"]
+            },
+            "to": { "name": "employees", "schema": "new", "rows": ["column"] }
+        },
+        {
+            "from": { "name": "dept_emp", "schema": "new", "rows": ["column"] },
+            "to": { "name": "employees", "schema": "new", "rows": ["column"] }
+        },
+        {
+            "from": { "name": "titles", "schema": "new", "rows": ["column"] },
+            "to": { "name": "employees", "schema": "new", "rows": ["column"] }
+        },
+        {
+            "from": { "name": "salaries", "schema": "new", "rows": ["column"] },
+            "to": { "name": "employees", "schema": "new", "rows": ["column"] }
+        }
+    ],
+    "schema": "main"
+}
