@@ -11,8 +11,8 @@ var remoteQuoteIfNeeded = function(str) {
 
 var getItemMySQLJson = function(context, items, webView, cb) {
 	var schema = context.currentSchema();
-	var jsonData = {"columns":[{"id":"0","name":"name","type":"string"},{"id":"1","name":"type","type":"string"},{"id":"2","name":"nullable","type":"boolean"}],"schema":schema,"items":[],"refs":[]};
-	var query1 = "SELECT table_name as table_name,ordinal_position AS ordinal_position,column_name AS column_name,column_type AS data_type,character_set_name AS character_set,collation_name AS COLLATION,is_nullable AS is_nullable,column_default AS column_default,extra AS extra,column_name AS foreign_key,column_comment AS COMMENT FROM information_schema.columns WHERE table_schema='" + schema + "' ORDER BY table_name, ordinal_position;";
+	var jsonData = {"columns":[{"id":"0","name":"name","type":"string"},{"id":"1","name":"type","type":"string"},{"id":"2","name":"nullable","type":"boolean"},{"id":"3","name":"comment","type":"string"}],"schema":schema,"items":[],"refs":[]};
+	var query1 = "SELECT table_name as table_name,ordinal_position AS ordinal_position,column_name AS column_name,column_type AS data_type,character_set_name AS character_set,collation_name AS COLLATION,case is_nullable when 'YES' then 'true' else 'false' end AS is_nullable,column_default AS column_default,extra AS extra,column_name AS foreign_key,column_comment AS COMMENT FROM information_schema.columns WHERE table_schema='" + schema + "' ORDER BY table_name, ordinal_position;";
 	var names = [];
 	items.forEach(function (item) {
 		names.push(item.name());
@@ -28,16 +28,16 @@ var getItemMySQLJson = function(context, items, webView, cb) {
 			if (name == null) {
 				name = row.raw("table_name");
 				jsonItem = {"id": name, "schema": schema, "name": name, "rows": []};
-				var row = {"id": row.raw("column_name"), "name": row.raw("column_name"), "type": row.raw("data_type"), "nullable": "true"};
+				var row = {"id": row.raw("column_name"), "name": row.raw("column_name"), "type": row.raw("data_type"), "nullable": row.raw("is_nullable"), "comment": row.raw("COMMENT")};
 				jsonItem["rows"].push(row);
 			} else if (row.raw("table_name") == name) {
-				var row = {"id": row.raw("column_name"), "name": row.raw("column_name"), "type": row.raw("data_type"), "nullable": "true"};
+				var row = {"id": row.raw("column_name"), "name": row.raw("column_name"), "type": row.raw("data_type"), "nullable": row.raw("is_nullable"), "comment": row.raw("COMMENT")};
 				jsonItem["rows"].push(row);
 			} else {
 				jsonData["items"].push(jsonItem);
 				name = row.raw("table_name");
 				jsonItem = {"id": name, "schema": schema, "name": name, "rows": []};
-				var row = {"id": row.raw("column_name"), "name": row.raw("column_name"), "type": row.raw("data_type"), "nullable": "true"};
+				var row = {"id": row.raw("column_name"), "name": row.raw("column_name"), "type": row.raw("data_type"), "nullable": row.raw("is_nullable"), "comment": row.raw("COMMENT")};
 				jsonItem["rows"].push(row);
 			}
 		});
@@ -72,7 +72,7 @@ var getItemMySQLJson = function(context, items, webView, cb) {
 			}
 		});
 		if (jsonItem != null) {
-			jsonData["refs"].push(jsonItem);			
+			jsonData["refs"].push(jsonItem);
 		}
 		webView.evaluate("window.Diagram.setProgressIndicator(1, 'Loading...')");
 		cb(jsonData);
@@ -198,7 +198,7 @@ var getItemSQLServerJson = function(context, items, webView, cb) {
 			}
 		});
 		if (jsonItem != null) {
-			jsonData["refs"].push(jsonItem);			
+			jsonData["refs"].push(jsonItem);
 		}
 		webView.evaluate("window.Diagram.setProgressIndicator(1, 'Loading...')");
 		cb(jsonData);
