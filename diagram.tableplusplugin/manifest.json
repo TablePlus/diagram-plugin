@@ -1,7 +1,7 @@
 {
     "name": "Diagram Generator",
     "identifier": "com.tableplus.TablePlus.diagram",
-    "version": "3.6",
+    "version": "3.7",
     "detail": "This plugin helps you generate database diagram",
     "author": "TablePlus",
     "site": "https://github.com/TablePlus/diagram-plugin",
