@@ -2,6 +2,13 @@
 
 var async = require("async");
 
+var requireExecuteRows = function(res) {
+	if (res == null || res.rows == null) {
+		return null;
+	}
+	return res.rows;
+};
+
 var remoteQuoteIfNeeded = function(str) {
 	if (str.charAt(0) === '"' && str.charAt(str.length-1) === '"') {
 	    return str.substr(1, str.length-2);
@@ -22,9 +29,15 @@ var getItemMySQLJson = function(context, items, webView, cb) {
 	async.parallel([
 		function(done) {
 			context.execute(query1, res => {
+				try {
+				var rows = requireExecuteRows(res);
+				if (rows == null) {
+					done(new Error('MySQL columns: bad execute() result'));
+					return;
+				}
 				var name = null;
 				var jsonItem = null;
-				res.rows.forEach(row => {
+				rows.forEach(row => {
 					if (names.length > 0 && !names.includes(row.raw("table_name"))) {
 						return;
 					}
@@ -48,13 +61,22 @@ var getItemMySQLJson = function(context, items, webView, cb) {
 					jsonData["items"].push(jsonItem);
 				}
 				done();
+				} catch (e) {
+					done(e);
+				}
 			});
 		},
 		function(done) {
 			context.execute(query2, res => {
+				try {
+				var rows = requireExecuteRows(res);
+				if (rows == null) {
+					done(new Error('MySQL fk: bad execute() result'));
+					return;
+				}
 				var name = null;
 				var jsonItem = null;
-				res.rows.forEach(row => {
+				rows.forEach(row => {
 					var childName = row.raw("TABLE_NAME");
 					var parentName = row.raw("REFERENCED_TABLE_NAME");
 					if (names.length > 0 && (!names.includes(childName) || !names.includes(parentName))) {
@@ -80,9 +102,15 @@ var getItemMySQLJson = function(context, items, webView, cb) {
 					jsonData["refs"].push(jsonItem);
 				}
 				done();
+				} catch (e) {
+					done(e);
+				}
 			});
 		}
-	], function() {
+	], function(err) {
+		if (err) {
+			return;
+		}
 		cb(jsonData);
 	});
 }
@@ -100,9 +128,15 @@ var getItemPostgreSQLJson = function(context, items, webView, cb) {
 	async.parallel([
 		function(done) {
 			context.execute(query1, res => {
+				try {
+				var rows = requireExecuteRows(res);
+				if (rows == null) {
+					done(new Error('PostgreSQL columns: bad execute() result'));
+					return;
+				}
 				var name = null;
 				var jsonItem = null;
-				res.rows.forEach(row => {
+				rows.forEach(row => {
 					if (names.length > 0 && !names.includes(row.raw("table_name"))) {
 						return;
 					}
@@ -126,11 +160,20 @@ var getItemPostgreSQLJson = function(context, items, webView, cb) {
 					jsonData["items"].push(jsonItem);
 				}
 				done();
+				} catch (e) {
+					done(e);
+				}
 			});
 		},
 		function(done) {
 			context.execute(query2, res => {
-				res.rows.forEach(row => {
+				try {
+				var rows = requireExecuteRows(res);
+				if (rows == null) {
+					done(new Error('PostgreSQL fk: bad execute() result'));
+					return;
+				}
+				rows.forEach(row => {
 					var childName = remoteQuoteIfNeeded(row.raw("child_name"));
 					var parentName = remoteQuoteIfNeeded(row.raw("parent_name"));
 					if (names.length > 0 && (!names.includes(childName) || !names.includes(parentName))) {
@@ -146,9 +189,15 @@ var getItemPostgreSQLJson = function(context, items, webView, cb) {
 					jsonData["refs"].push(jsonItem);
 				});
 				done();
+				} catch (e) {
+					done(e);
+				}
 			});
 		}
-	], function() {
+	], function(err) {
+		if (err) {
+			return;
+		}
 		cb(jsonData);
 	});
 }
@@ -166,9 +215,15 @@ var getItemSQLServerJson = function(context, items, webView, cb) {
 	async.parallel([
 		function(done) {
 			context.execute(query1, res => {
+				try {
+				var rows = requireExecuteRows(res);
+				if (rows == null) {
+					done(new Error('SQL Server columns: bad execute() result'));
+					return;
+				}
 				var name = null;
 				var jsonItem = null;
-				res.rows.forEach(row => {
+				rows.forEach(row => {
 					if (names.length > 0 && !names.includes(row.raw("table_name"))) {
 						return;
 					}
@@ -192,13 +247,22 @@ var getItemSQLServerJson = function(context, items, webView, cb) {
 					jsonData["items"].push(jsonItem);
 				}
 				done();
+				} catch (e) {
+					done(e);
+				}
 			});
 		},
 		function(done) {
 			context.execute(query2, res => {
+				try {
+				var rows = requireExecuteRows(res);
+				if (rows == null) {
+					done(new Error('SQL Server fk: bad execute() result'));
+					return;
+				}
 				var name = null;
 				var jsonItem = null;
-				res.rows.forEach(row => {
+				rows.forEach(row => {
 					var childName = row.raw("child_name");
 					var parentName = row.raw("parent_name");
 					if (names.length > 0 && (!names.includes(childName) || !names.includes(parentName))) {
@@ -224,9 +288,15 @@ var getItemSQLServerJson = function(context, items, webView, cb) {
 					jsonData["refs"].push(jsonItem);
 				}
 				done();
+				} catch (e) {
+					done(e);
+				}
 			});
 		}
-	], function() {
+	], function(err) {
+		if (err) {
+			return;
+		}
 		cb(jsonData);
 	});
 }
@@ -239,6 +309,11 @@ var getItemJson = function(context, items, webView, cb) {
 	var total = items.length;
 	async.map(items, function(item, callback) {
 		context.fetchMeta(item, function(data) {
+			try {
+			if (data == null || data["columns"] == null) {
+				callback(new Error('fetchMeta: invalid data'));
+				return;
+			}
 			var jsonItem = {"id": item.name(), "name": item.name(), "schema": item.schema(), "rows": []};
 			data["columns"].forEach(function(column) {
 				var row = {"id": column["name"], "name": column["name"], "type": column["typeString"], "nullable": "true"};
@@ -247,8 +322,14 @@ var getItemJson = function(context, items, webView, cb) {
 			jsonData["refs"] = jsonData["refs"].concat(data["foriegnKeys"]);
 			count += 1;
 			callback(null, jsonItem);
+			} catch (e) {
+				callback(e);
+			}
 		});
 	}, function(err, results) {
+		if (err) {
+			return;
+		}
 		jsonData["items"] = results;
 		cb(jsonData);
     });
