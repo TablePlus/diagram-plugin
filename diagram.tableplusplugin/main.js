@@ -1,6 +1,6 @@
 'use strict';
 
-import { getItemPostgreSQLJson, getItemMySQLJson, getItemSQLServerJson, getItemJson } from './library/helper';
+import { getItemJson, getItemMySQLJson, getItemPostgreSQLJson, getItemSQLServerJson } from './library/helper';
 
 var escapeStr = function(data) {
 	return JSON.stringify(data);
@@ -55,9 +55,6 @@ var generateDiagram = function(context) {
 		var theme = context.currentThemeName();
 		webView.evaluate("window.Diagram.setTheme('" + theme + "');");
 	}
-
-	// Show indicator
-	// webView.evaluate("window.Diagram.setProgressIndicator(true, 'Loading...')");
 
 	// Disable menu context
 	webView.evaluate("document.body.setAttribute('oncontextmenu', 'event.preventDefault();');");
@@ -127,9 +124,6 @@ var generateDiagramSelectedItems = function(context) {
 		var theme = context.currentThemeName();
 		webView.evaluate("window.Diagram.setTheme('" + theme + "');");
 	}
-
-	// Show indicator
-	// webView.evaluate("window.Diagram.setProgressIndicator(true, 'Loading...')");
 
 	// Disable menu context
 	webView.evaluate("document.body.setAttribute('oncontextmenu', 'event.preventDefault();');");

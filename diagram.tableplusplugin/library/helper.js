@@ -246,7 +246,6 @@ var getItemJson = function(context, items, webView, cb) {
 			});
 			jsonData["refs"] = jsonData["refs"].concat(data["foriegnKeys"]);
 			count += 1;
-			// webView.evaluate("window.Diagram.setProgressIndicator(" + (count/total).toString() + ", 'Loading: " + count.toString() + "/" + total.toString() + " items')");
 			callback(null, jsonItem);
 		});
 	}, function(err, results) {
@@ -255,4 +254,5 @@ var getItemJson = function(context, items, webView, cb) {
     });
 }
 
-export { getItemPostgreSQLJson, getItemMySQLJson, getItemSQLServerJson, getItemJson };
+export { getItemJson, getItemMySQLJson, getItemPostgreSQLJson, getItemSQLServerJson };
+
