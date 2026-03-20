@@ -4,10 +4,35 @@ import { getItemJson, getItemMySQLJson, getItemPostgreSQLJson, getItemSQLServerJ
 
 var escapeStr = function(data) {
 	return JSON.stringify(data);
-}
+};
 
-var importDiagram = function(webView, data, callback) {
-	webView.evaluate("window.Diagram.importDiagramObject(" + escapeStr(data) + ")", callback);
+var canImportPayload = function(data) {
+	return (
+		data &&
+		Array.isArray(data.items) &&
+		data.items.length > 0
+	);
+};
+
+var importDiagram = function(webView, data, context) {
+	var script =
+		'(function(){try{' +
+		"if(typeof window.Diagram==='undefined'||typeof window.Diagram.importDiagramObject!=='function'){" +
+		'return{success:false,error:' +
+		JSON.stringify(
+			'window.Diagram.importDiagramObject is missing (bundle not loaded or too early).'
+		) +
+		'};' +
+		'}' +
+		'window.Diagram.importDiagramObject(' +
+		escapeStr(data) +
+		');' +
+		'return{success:true};' +
+		'}catch(e){' +
+		'return{success:false,error:(e&&e.stack)?e.stack:String(e)};' +
+		'}' +
+		'})()';
+	webView.evaluate(script, function () {});
 };
 
 var newDiagram = function(context) {
@@ -33,6 +58,42 @@ var newDiagram = function(context) {
 
 	// Disable menu context
 	webView.evaluate("document.body.setAttribute('oncontextmenu', 'event.preventDefault();');");
+
+    var driver = context.driver();
+	switch (driver) {
+	case "MySQL":
+	case "MariaDB":
+		getItemMySQLJson(context, [], webView, function (data) {
+			if (canImportPayload(data)) {
+				importDiagram(webView, data, context);
+			}
+		});
+		break;
+	case "PostgreSQL":
+	case "Redshift":
+	case "Greenplum":
+		getItemPostgreSQLJson(context, [], webView, function (data) {
+			if (canImportPayload(data)) {
+				importDiagram(webView, data, context);
+			}
+		});
+	  	break;
+	case "MicrosoftSQLServer":
+		getItemSQLServerJson(context, [], webView, function (data) {
+			if (canImportPayload(data)) {
+				importDiagram(webView, data, context);
+			}
+		});
+	  	break;
+	default:
+		var items = context.items();
+		getItemJson(context, items, webView, function (data) {
+			if (canImportPayload(data)) {
+				importDiagram(webView, data, context);
+			}
+		});
+		break;
+	}
 };
 
 var generateDiagram = function(context) {
@@ -64,41 +125,33 @@ var generateDiagram = function(context) {
 	case "MySQL":
 	case "MariaDB":
 		getItemMySQLJson(context, [], webView, function (data) {
-			importDiagram(webView, data, function (result) {
-				if (result && result["error"] != null) {
-					context.alert("Error", result["error"]);
-				}
-			});
+			if (canImportPayload(data)) {
+				importDiagram(webView, data, context);
+			}
 		});
 		break;
 	case "PostgreSQL":
 	case "Redshift":
 	case "Greenplum":
 		getItemPostgreSQLJson(context, [], webView, function (data) {
-			importDiagram(webView, data, function (result) {
-				if (result && result["error"] != null) {
-					context.alert("Error", result["error"]);
-				}
-			});
+			if (canImportPayload(data)) {
+				importDiagram(webView, data, context);
+			}
 		});
 	  	break;
 	case "MicrosoftSQLServer":
 		getItemSQLServerJson(context, [], webView, function (data) {
-			importDiagram(webView, data, function (result) {
-				if (result && result["error"] != null) {
-					context.alert("Error", result["error"]);
-				}
-			});
+			if (canImportPayload(data)) {
+				importDiagram(webView, data, context);
+			}
 		});
 	  	break;
 	default:
 		var items = context.items();
 		getItemJson(context, items, webView, function (data) {
-			importDiagram(webView, data, function (result) {
-				if (result && result["error"] != null) {
-					context.alert("Error", result["error"]);
-				}
-			});
+			if (canImportPayload(data)) {
+				importDiagram(webView, data, context);
+			}
 		});
 		break;
 	}
@@ -134,38 +187,30 @@ var generateDiagramSelectedItems = function(context) {
 	switch (driver) {
 	case "MySQL":
 		getItemMySQLJson(context, items, webView, function (data) {
-			importDiagram(webView, data, function (result) {
-				if (result && result["error"] != null) {
-					context.alert("Error", result["error"]);
-				}
-			});
+			if (canImportPayload(data)) {
+				importDiagram(webView, data, context);
+			}
 		});
 		break;
 	case "PostgreSQL":
 		getItemPostgreSQLJson(context, items, webView, function (data) {
-			importDiagram(webView, data, function (result) {
-				if (result && result["error"] != null) {
-					context.alert("Error", result["error"]);
-				}
-			});
+			if (canImportPayload(data)) {
+				importDiagram(webView, data, context);
+			}
 		});
 	  	break;
 	case "MicrosoftSQLServer":
 		getItemSQLServerJson(context, items, webView, function (data) {
-			importDiagram(webView, data, function (result) {
-				if (result && result["error"] != null) {
-					context.alert("Error", result["error"]);
-				}
-			});
+			if (canImportPayload(data)) {
+				importDiagram(webView, data, context);
+			}
 		});
 	  	break;
 	default:
 		getItemJson(context, items, webView, function (data) {
-			importDiagram(webView, data, function (result) {
-				if (result && result["error"] != null) {
-					context.alert("Error", result["error"]);
-				}
-			});
+			if (canImportPayload(data)) {
+				importDiagram(webView, data, context);
+			}
 		});
 		break;
 	}
